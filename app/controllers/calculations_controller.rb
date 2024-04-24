@@ -45,4 +45,16 @@ def payment_results
   render({:template => "omnical_template/payment_results"})
 end
 
+def random_new
+  render({:template => "omnical_template/random_new"})
+end
+
+def random_results
+  @min = params.fetch("user_min").to_f
+  @max = params.fetch("user_max").to_f
+  @random_result = rand(@min..@max)
+  
+  render({:template => "omnical_template/random_results"})
+end
+
 end
